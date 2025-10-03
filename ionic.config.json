@@ -1,0 +1,7 @@
+{
+  "name": "SmartMenuApp",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular-standalone"
+}
