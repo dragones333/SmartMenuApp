@@ -1,0 +1,46 @@
+ion-card {
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+  transition: transform 0.2s ease;
+  cursor: pointer;
+  margin-bottom: 15px;
+
+  &:hover {
+    transform: translateY(-5px);
+  }
+
+  img {
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+    height: 150px;
+    object-fit: cover;
+  }
+
+  ion-card-header {
+    h1, h2, h3 {
+      font-weight: 600;
+      color: #333;
+    }
+    ion-card-subtitle {
+      color: #777;
+      font-size: 0.9rem;
+    }
+  }
+
+  ion-card-content {
+    font-size: 0.95rem;
+    color: #555;
+  }
+}
+
+ion-badge {
+  font-size: 0.8rem;
+  font-weight: bold;
+  padding: 0 8px;
+}
+
+ion-fab-button {
+  background: var(--ion-color-primary);
+  color: #fff;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}

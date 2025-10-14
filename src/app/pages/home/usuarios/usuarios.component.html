@@ -1,0 +1,17 @@
+<ion-item *ngFor="let user of users">
+  <ion-avatar slot="start">
+    <img src="assets/user-avatar.png"/>
+  </ion-avatar>
+  <ion-label>
+    <h2>{{user.nombre}}</h2>
+    <p>{{user.correo}} - {{user.rol.nombre}}</p>
+  </ion-label>
+  <ion-buttons slot="end">
+    <ion-button (click)="editUser(user)">
+      <ion-icon name="create-outline"></ion-icon>
+    </ion-button>
+    <ion-button color="danger" (click)="deleteUser(user.id)">
+      <ion-icon name="trash-outline"></ion-icon>
+    </ion-button>
+  </ion-buttons>
+</ion-item>
