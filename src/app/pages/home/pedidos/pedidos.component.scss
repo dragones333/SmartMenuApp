@@ -1,11 +1,75 @@
+ion-content {
+  --background: #f4f5f8;
+}
+
+.pedido-card {
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+  }
+
+  ion-card-header {
+    background: linear-gradient(135deg, #2196f3, #64b5f6);
+    color: #fff;
+    text-align: center;
+
+    ion-card-title {
+      font-size: 1.3rem;
+      font-weight: 700;
+    }
+
+    ion-card-subtitle {
+      font-size: 1rem;
+      opacity: 0.9;
+    }
+  }
+
+  ion-card-content {
+    background: #fff;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .estado {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 10px;
+
+    ion-badge {
+      font-size: 0.9rem;
+      padding: 6px 12px;
+      border-radius: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+  }
+
+  .acciones {
+    display: flex;
+    justify-content: space-evenly;
+  }
+}
+
 ion-badge[color="success"] {
   background-color: #4caf50;
   color: #fff;
 }
 
 ion-badge[color="warning"] {
-  background-color: #ffc107;
-  color: #333;
+  background-color: #ffb300;
+  color: #fff;
+}
+
+ion-badge[color="primary"] {
+  background-color: #2196f3;
+  color: #fff;
 }
 
 ion-badge[color="medium"] {

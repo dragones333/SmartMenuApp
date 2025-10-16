@@ -1,3 +1,40 @@
-<p>
-  navbar works!
-</p>
+<ion-toolbar color="primary" class="admin-navbar">
+  
+  <ion-buttons slot="start">
+    <ion-menu-button auto-hide="false"></ion-menu-button>
+  </ion-buttons>
+  
+  <ion-title>SmartMenu - Panel de Administración</ion-title>
+
+  <div class="admin-tabs" slot="end">
+    
+    <ion-button routerLink="/platillos" routerLinkActive="active-tab" fill="clear">
+      <ion-icon name="restaurant-outline"></ion-icon>
+      <span class="ion-hide-md-down">Menú</span>
+    </ion-button>
+
+    <ion-button routerLink="/clientes/lista" routerLinkActive="active-tab" fill="clear">
+      <ion-icon name="people-outline"></ion-icon>
+      <span class="ion-hide-md-down">Clientes</span>
+    </ion-button>
+
+    <ion-button routerLink="/inventario" routerLinkActive="active-tab" fill="clear">
+      <ion-icon name="layers-outline"></ion-icon>
+      <span class="ion-hide-md-down">Inventario</span>
+    </ion-button>
+    
+    <ion-button routerLink="/proveedores/lista" routerLinkActive="active-tab" fill="clear">
+      <ion-icon name="truck-outline"></ion-icon>
+      <span class="ion-hide-md-down">Proveedores</span>
+    </ion-button>
+    
+    <ion-button routerLink="/admin/usuarios" routerLinkActive="active-tab" fill="clear" title="Usuarios y Roles">
+      <ion-icon name="lock-closed-outline"></ion-icon>
+    </ion-button>
+    
+    <ion-button color="danger" (click)="logout()">
+        <ion-icon slot="icon-only" name="log-out-outline"></ion-icon>
+    </ion-button>
+
+  </div>
+</ion-toolbar>

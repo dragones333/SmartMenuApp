@@ -1,41 +1,48 @@
 <ion-header>
   <ion-toolbar color="primary">
-    <ion-title>Platillos</ion-title>
+    <ion-title>Gestión de Menú</ion-title>
     <ion-buttons slot="end">
-      <ion-button (click)="openAddPlatillo()">
-        <ion-icon slot="icon-only" name="add-circle-outline"></ion-icon>
+      <ion-button fill="solid" color="tertiary" (click)="openAddPlatillo()">
+        <ion-icon slot="start" name="add-circle-outline"></ion-icon>
+        <span class="ion-hide-md-down">Agregar Platillo</span>
       </ion-button>
     </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
-<ion-content class="ion-padding">
-  <!-- Barra de búsqueda -->
-  <ion-searchbar [(ngModel)]="searchText" placeholder="Buscar platillo"></ion-searchbar>
+<ion-content class="ion-padding colorful-background">
+  <ion-searchbar [(ngModel)]="searchText" 
+                 placeholder="Buscar platillo..."
+                 color="light"
+                 animated></ion-searchbar>
 
   <ion-grid>
     <ion-row>
-      <!-- Recorremos el getter filteredPlatillos -->
       <ion-col size="12" size-md="6" size-lg="4" *ngFor="let platillo of filteredPlatillos">
-        <ion-card>
-          <img [src]="platillo.imagen || 'assets/platillo-default.jpg'" />
-          <ion-card-header>
-            <ion-card-title>{{platillo.nombre}}</ion-card-title>
-            <ion-card-subtitle>${{platillo.precio}}</ion-card-subtitle>
-          </ion-card-header>
-          <ion-card-content>
-            {{platillo.descripcion}}
-          </ion-card-content>
-          <ion-item lines="none">
-            <ion-badge [color]="platillo.disponible ? 'success' : 'medium'">
-              {{platillo.disponible ? 'Disponible' : 'Agotado'}}
+        <ion-card class="platillo-card">
+          <div class="card-image">
+            <img [src]="platillo.imagen || 'assets/platillo-default.jpg'" alt="Imagen de {{platillo.nombre}}" />
+            <ion-badge class="badge-estado" [color]="platillo.disponible ? 'success' : 'warning'">
+              {{ platillo.disponible ? 'DISPONIBLE' : 'AGOTADO' }}
             </ion-badge>
+          </div>
+
+          <ion-card-header>
+            <ion-card-title>{{ platillo.nombre }}</ion-card-title>
+            <ion-card-subtitle class="precio">${{ platillo.precio | number:'1.2-2' }}</ion-card-subtitle>
+          </ion-card-header>
+
+          <ion-card-content>
+            <p>{{ platillo.descripcion | slice:0:100 }}...</p>
+          </ion-card-content>
+
+          <ion-item lines="none" class="acciones">
             <ion-buttons slot="end">
-              <ion-button (click)="editPlatillo(platillo)">
-                <ion-icon name="create-outline"></ion-icon>
+              <ion-button color="secondary" fill="clear" (click)="editPlatillo(platillo)">
+                <ion-icon slot="icon-only" name="create-outline"></ion-icon>
               </ion-button>
-              <ion-button color="danger" (click)="deletePlatillo(platillo.id)">
-                <ion-icon name="trash-outline"></ion-icon>
+              <ion-button color="danger" fill="clear" (click)="deletePlatillo(platillo.id)">
+                <ion-icon slot="icon-only" name="trash-outline"></ion-icon>
               </ion-button>
             </ion-buttons>
           </ion-item>

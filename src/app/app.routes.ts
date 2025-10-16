@@ -10,6 +10,7 @@ import { ClientesComponent } from './pages/home/clientes/clientes.component';
 import { InventarioComponent } from './pages/home/inventario/inventario.component';
 import { ProveedoresComponent } from './pages/home/proveedores/proveedores.component';
 
+
 export const routes: Routes = [
   { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
 

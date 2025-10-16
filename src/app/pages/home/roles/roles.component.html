@@ -1,26 +1,46 @@
 <ion-header>
   <ion-toolbar color="primary">
-    <ion-title>Roles</ion-title>
+    <ion-title>Gestión de Roles</ion-title>
     <ion-buttons slot="end">
       <ion-button (click)="openAddRole()">
         <ion-icon slot="icon-only" name="add-circle-outline"></ion-icon>
+        <span class="ion-hide-md-down">Agregar Rol</span>
       </ion-button>
     </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
 <ion-content class="ion-padding">
-  <ion-list>
-    <ion-item *ngFor="let rol of roles">
-      <ion-label>{{rol.nombre}}</ion-label>
-      <ion-buttons slot="end">
-        <ion-button (click)="editRole(rol)">
-          <ion-icon name="create-outline"></ion-icon>
-        </ion-button>
-        <ion-button color="danger" (click)="deleteRole(rol.id)">
-          <ion-icon name="trash-outline"></ion-icon>
-        </ion-button>
-      </ion-buttons>
-    </ion-item>
-  </ion-list>
+  <ion-grid>
+    <ion-row>
+      <ion-col
+        size="12"
+        size-md="6"
+        size-lg="4"
+        *ngFor="let rol of roles"
+      >
+        <ion-card class="rol-card">
+          <ion-card-header>
+            <ion-icon name="person-circle-outline" class="rol-icon"></ion-icon>
+            <ion-card-title>{{ rol.nombre }}</ion-card-title>
+          </ion-card-header>
+
+          <ion-card-content>
+            <p>Acceso y permisos específicos del rol de <strong>{{ rol.nombre }}</strong>.</p>
+          </ion-card-content>
+
+          <ion-item lines="none" class="rol-actions">
+            <ion-buttons slot="end">
+              <ion-button color="secondary" fill="clear" (click)="editRole(rol)">
+                <ion-icon name="create-outline"></ion-icon>
+              </ion-button>
+              <ion-button color="danger" fill="clear" (click)="deleteRole(rol.id)">
+                <ion-icon name="trash-outline"></ion-icon>
+              </ion-button>
+            </ion-buttons>
+          </ion-item>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 </ion-content>

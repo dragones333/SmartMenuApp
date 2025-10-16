@@ -1,3 +1,18 @@
-<ion-app>
+<div *ngIf="isLoggedIn">
+  <ion-app>
+    
+    <app-sidebar></app-sidebar>
+
+    <div class="ion-page" id="main-content">
+      
+      <app-navbar></app-navbar>
+      
+      <ion-router-outlet></ion-router-outlet>
+      
+    </div>
+  </ion-app>
+</div>
+
+<div *ngIf="!isLoggedIn">
   <ion-router-outlet></ion-router-outlet>
-</ion-app>
+</div>
