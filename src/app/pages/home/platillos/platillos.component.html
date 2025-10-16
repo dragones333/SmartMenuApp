@@ -21,7 +21,7 @@
       <ion-col size="12" size-md="6" size-lg="4" *ngFor="let platillo of filteredPlatillos">
         <ion-card class="platillo-card">
           <div class="card-image">
-            <img [src]="platillo.imagen || 'assets/platillo-default.jpg'" alt="Imagen de {{platillo.nombre}}" />
+            <img [src]="platillo.imagen || 'assets/ejem.jpeg'" alt="Imagen de {{platillo.nombre}}" />
             <ion-badge class="badge-estado" [color]="platillo.disponible ? 'success' : 'warning'">
               {{ platillo.disponible ? 'DISPONIBLE' : 'AGOTADO' }}
             </ion-badge>

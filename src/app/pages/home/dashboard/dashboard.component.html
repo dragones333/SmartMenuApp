@@ -1,49 +1,59 @@
 <ion-header>
   <ion-toolbar color="primary">
-    <ion-title>SmartMenu Dashboard</ion-title>
+    <ion-title class="ion-text-center">
+      <ion-icon name="speedometer-outline"></ion-icon>
+      SmartMenu Dashboard
+    </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content class="ion-padding">
-  <ion-grid>
+  <ion-grid fixed>
     <ion-row>
       <ion-col size="12" size-md="6" size-lg="3">
-        <ion-card color="light">
+        <ion-card class="card-info card-pedidos">
           <ion-card-header>
+            <ion-icon name="receipt-outline" class="card-icon"></ion-icon>
             <ion-card-title>Pedidos Pendientes</ion-card-title>
           </ion-card-header>
           <ion-card-content>
-            <h2>{{pedidosPendientes}}</h2>
+            <h2>{{ pedidosPendientes }}</h2>
           </ion-card-content>
         </ion-card>
       </ion-col>
+
       <ion-col size="12" size-md="6" size-lg="3">
-        <ion-card color="light">
+        <ion-card class="card-info card-clientes">
           <ion-card-header>
+            <ion-icon name="people-outline" class="card-icon"></ion-icon>
             <ion-card-title>Clientes</ion-card-title>
           </ion-card-header>
           <ion-card-content>
-            <h2>{{totalClientes}}</h2>
+            <h2>{{ totalClientes }}</h2>
           </ion-card-content>
         </ion-card>
       </ion-col>
+
       <ion-col size="12" size-md="6" size-lg="3">
-        <ion-card color="light">
+        <ion-card class="card-info card-platillos">
           <ion-card-header>
+            <ion-icon name="fast-food-outline" class="card-icon"></ion-icon>
             <ion-card-title>Platillos Disponibles</ion-card-title>
           </ion-card-header>
           <ion-card-content>
-            <h2>{{platillosDisponibles}}</h2>
+            <h2>{{ platillosDisponibles }}</h2>
           </ion-card-content>
         </ion-card>
       </ion-col>
+
       <ion-col size="12" size-md="6" size-lg="3">
-        <ion-card color="light">
+        <ion-card class="card-info card-proveedores">
           <ion-card-header>
+            <ion-icon name="business-outline" class="card-icon"></ion-icon>
             <ion-card-title>Proveedores</ion-card-title>
           </ion-card-header>
           <ion-card-content>
-            <h2>{{totalProveedores}}</h2>
+            <h2>{{ totalProveedores }}</h2>
           </ion-card-content>
         </ion-card>
       </ion-col>

@@ -1,10 +1,53 @@
 :root {
-  --ion-color-primary: #ff6f61;    
-  --ion-color-secondary: #f7c59f;  
-  --ion-color-success: #4caf50;   
-  --ion-color-warning: #ffc107;   
-  --ion-color-medium: #9e9e9e;     
+  --ion-color-primary: #ff6f61;
+  --ion-color-secondary: #f7c59f;
+  --ion-color-success: #4caf50;
+  --ion-color-warning: #ffc107;
+  --ion-color-medium: #9e9e9e;
   --ion-font-family: 'Roboto', sans-serif;
   --ion-toolbar-background: var(--ion-color-primary);
   --ion-card-border-radius: 12px;
+}
+
+ion-menu {
+  --width: 250px;
+  --background: #fff;
+  box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+}
+
+ion-toolbar {
+  font-weight: 600;
+  color: #fff;
+  text-align: center;
+  letter-spacing: 0.5px;
+}
+
+.sidebar-content {
+  ion-list {
+    margin-top: 10px;
+
+    ion-item {
+      --background: transparent;
+      color: #333;
+      font-weight: 500;
+      border-radius: 8px;
+      margin: 5px 10px;
+      transition: all 0.2s ease-in-out;
+
+      ion-icon {
+        color: var(--ion-color-primary);
+        font-size: 1.3rem;
+      }
+
+      &:hover {
+        background: rgba(255, 111, 97, 0.1);
+        transform: translateX(4px);
+      }
+
+      &.active-link {
+        background: rgba(255, 111, 97, 0.15);
+        border-left: 4px solid var(--ion-color-primary);
+      }
+    }
+  }
 }

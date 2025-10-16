@@ -2,7 +2,7 @@
   <ion-toolbar color="primary">
     <ion-title>Gestión de Roles</ion-title>
     <ion-buttons slot="end">
-      <ion-button (click)="openAddRole()">
+      <ion-button (click)="openAddRole()" class="add-role-btn">
         <ion-icon slot="icon-only" name="add-circle-outline"></ion-icon>
         <span class="ion-hide-md-down">Agregar Rol</span>
       </ion-button>
@@ -13,15 +13,12 @@
 <ion-content class="ion-padding">
   <ion-grid>
     <ion-row>
-      <ion-col
-        size="12"
-        size-md="6"
-        size-lg="4"
-        *ngFor="let rol of roles"
-      >
+      <ion-col size="12" size-md="6" size-lg="4" *ngFor="let rol of roles">
         <ion-card class="rol-card">
           <ion-card-header>
-            <ion-icon name="person-circle-outline" class="rol-icon"></ion-icon>
+            <div class="rol-icon-wrapper">
+              <ion-icon name="person-circle-outline" class="rol-icon"></ion-icon>
+            </div>
             <ion-card-title>{{ rol.nombre }}</ion-card-title>
           </ion-card-header>
 
@@ -31,10 +28,10 @@
 
           <ion-item lines="none" class="rol-actions">
             <ion-buttons slot="end">
-              <ion-button color="secondary" fill="clear" (click)="editRole(rol)">
+              <ion-button color="secondary" fill="clear" (click)="editRole(rol)" title="Editar rol">
                 <ion-icon name="create-outline"></ion-icon>
               </ion-button>
-              <ion-button color="danger" fill="clear" (click)="deleteRole(rol.id)">
+              <ion-button color="danger" fill="clear" (click)="deleteRole(rol.id)" title="Eliminar rol">
                 <ion-icon name="trash-outline"></ion-icon>
               </ion-button>
             </ion-buttons>

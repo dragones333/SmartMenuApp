@@ -1,13 +1,15 @@
 <ion-toolbar color="primary" class="admin-navbar">
-  
   <ion-buttons slot="start">
     <ion-menu-button auto-hide="false"></ion-menu-button>
   </ion-buttons>
-  
-  <ion-title>SmartMenu - Panel de Administración</ion-title>
+
+  <ion-title class="navbar-title">
+    <ion-icon name="speedometer-outline"></ion-icon>
+    SmartMenu <span class="subtitle">Panel de Administración</span>
+  </ion-title>
 
   <div class="admin-tabs" slot="end">
-    
+
     <ion-button routerLink="/platillos" routerLinkActive="active-tab" fill="clear">
       <ion-icon name="restaurant-outline"></ion-icon>
       <span class="ion-hide-md-down">Menú</span>
@@ -22,19 +24,18 @@
       <ion-icon name="layers-outline"></ion-icon>
       <span class="ion-hide-md-down">Inventario</span>
     </ion-button>
-    
+
     <ion-button routerLink="/proveedores/lista" routerLinkActive="active-tab" fill="clear">
       <ion-icon name="truck-outline"></ion-icon>
       <span class="ion-hide-md-down">Proveedores</span>
     </ion-button>
-    
+
     <ion-button routerLink="/admin/usuarios" routerLinkActive="active-tab" fill="clear" title="Usuarios y Roles">
       <ion-icon name="lock-closed-outline"></ion-icon>
     </ion-button>
-    
-    <ion-button color="danger" (click)="logout()">
-        <ion-icon slot="icon-only" name="log-out-outline"></ion-icon>
-    </ion-button>
 
+    <ion-button color="danger" class="logout-btn" (click)="logout()" title="Cerrar sesión">
+      <ion-icon slot="icon-only" name="log-out-outline"></ion-icon>
+    </ion-button>
   </div>
 </ion-toolbar>

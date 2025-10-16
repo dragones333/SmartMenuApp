@@ -1,15 +1,18 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { RouterLink, RouterLinkActive } from '@angular/router';
-import { 
-  IonContent, 
-  IonHeader, 
-  IonList, 
-  IonItem, 
-  IonLabel, 
+import { Router, RouterLink, RouterLinkActive } from '@angular/router';
+import {
+  IonContent,
+  IonHeader,
+  IonList,
+  IonItem,
+  IonLabel,
   IonIcon,
-  IonMenu
-} from '@ionic/angular/standalone'; 
+  IonMenu,
+  IonToolbar,
+  IonTitle,
+  IonRouterOutlet,
+} from '@ionic/angular/standalone';
 
 @Component({
   selector: 'app-sidebar',
@@ -25,8 +28,17 @@ import {
     IonItem,
     IonLabel,
     IonIcon,
-    IonMenu
+    IonMenu,
+    IonToolbar,
+    IonTitle,
+    IonRouterOutlet,
   ],
-  standalone: true 
+  standalone: true,
 })
-export class SidebarComponent {}
+export class SidebarComponent {
+  constructor(private router: Router) {}
+
+  logout() {
+    this.router.navigate(['/login']);
+  }
+}

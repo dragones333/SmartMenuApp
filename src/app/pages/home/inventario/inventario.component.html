@@ -2,7 +2,7 @@
   <ion-toolbar color="primary">
     <ion-title>Inventario</ion-title>
     <ion-buttons slot="end">
-      <ion-button (click)="openAddInsumo()">
+      <ion-button (click)="openAddInsumo()" class="add-btn" title="Agregar insumo">
         <ion-icon slot="icon-only" name="add-circle-outline"></ion-icon>
       </ion-button>
     </ion-buttons>
@@ -12,14 +12,12 @@
 <ion-content class="ion-padding">
   <ion-grid>
     <ion-row>
-      <ion-col
-        size="12"
-        size-md="6"
-        size-lg="4"
-        *ngFor="let item of inventario"
-      >
+      <ion-col size="12" size-md="6" size-lg="4" *ngFor="let item of inventario">
         <ion-card class="item-card">
           <ion-card-header>
+            <div class="icon-wrapper">
+              <ion-icon name="cube-outline" class="item-icon"></ion-icon>
+            </div>
             <ion-card-title>{{ item.nombre_insumo }}</ion-card-title>
             <ion-card-subtitle>{{ item.cantidad }} {{ item.unidad }}</ion-card-subtitle>
           </ion-card-header>
@@ -27,10 +25,10 @@
           <ion-card-content>
             <ion-item lines="none" class="actions">
               <ion-buttons slot="end">
-                <ion-button (click)="editInsumo(item)">
+                <ion-button color="primary" fill="clear" (click)="editInsumo(item)" title="Editar insumo">
                   <ion-icon name="create-outline"></ion-icon>
                 </ion-button>
-                <ion-button color="danger" (click)="deleteInsumo(item.id)">
+                <ion-button color="danger" fill="clear" (click)="deleteInsumo(item.id)" title="Eliminar insumo">
                   <ion-icon name="trash-outline"></ion-icon>
                 </ion-button>
               </ion-buttons>

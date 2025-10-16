@@ -5,18 +5,19 @@ ion-content {
 .pedido-card {
   border-radius: 15px;
   overflow: hidden;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
   transition: transform 0.25s ease, box-shadow 0.25s ease;
 
   &:hover {
     transform: translateY(-5px);
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
   }
 
   ion-card-header {
     background: linear-gradient(135deg, #2196f3, #64b5f6);
     color: #fff;
     text-align: center;
+    padding: 15px;
 
     ion-card-title {
       font-size: 1.3rem;
@@ -25,7 +26,8 @@ ion-content {
 
     ion-card-subtitle {
       font-size: 1rem;
-      opacity: 0.9;
+      opacity: 0.85;
+      margin-top: 4px;
     }
   }
 
@@ -34,19 +36,17 @@ ion-content {
     padding: 15px;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    gap: 12px;
   }
 
   .estado {
     display: flex;
     justify-content: center;
-    margin-bottom: 10px;
 
     ion-badge {
       font-size: 0.9rem;
-      padding: 6px 12px;
+      padding: 6px 14px;
       border-radius: 12px;
-      text-transform: uppercase;
       letter-spacing: 0.5px;
     }
   }
@@ -54,6 +54,22 @@ ion-content {
   .acciones {
     display: flex;
     justify-content: space-evenly;
+
+    ion-button {
+      --border-radius: 50%;
+      --padding-start: 12px;
+      --padding-end: 12px;
+      --ripple-color: rgba(0,0,0,0.1);
+      transition: transform 0.2s ease;
+
+      &:hover {
+        transform: scale(1.1);
+      }
+
+      ion-icon {
+        font-size: 1.2rem;
+      }
+    }
   }
 }
 

@@ -1,9 +1,33 @@
-ion-item {
-  border-radius: 10px;
+ion-content {
+  --background: #f5f5f5;
+}
+
+.add-btn {
+  --background: rgba(255, 255, 255, 0.15);
+  --border-radius: 8px;
+  transition: background 0.2s ease;
+
+  &:hover {
+    --background: rgba(255, 255, 255, 0.25);
+  }
+
+  ion-icon {
+    font-size: 1.3rem;
+  }
+}
+
+.cliente-item {
+  border-radius: 12px;
   margin-bottom: 10px;
   box-shadow: 0 2px 8px rgba(0,0,0,0.1);
   background: #fff;
   --ion-item-background: transparent;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  }
 
   ion-avatar img {
     border-radius: 50%;
@@ -12,13 +36,29 @@ ion-item {
     object-fit: cover;
   }
 
-  ion-label h2 {
-    font-weight: 600;
-    margin-bottom: 2px;
+  ion-label {
+    h2 {
+      font-weight: 600;
+      margin-bottom: 2px;
+      font-size: 1rem;
+    }
+
+    p {
+      font-size: 0.85rem;
+      color: #666;
+    }
   }
 
-  ion-label p {
-    font-size: 0.85rem;
-    color: #666;
+  ion-buttons {
+    ion-button {
+      --border-radius: 50%;
+      --padding-start: 10px;
+      --padding-end: 10px;
+      transition: transform 0.2s ease;
+
+      &:hover {
+        transform: scale(1.1);
+      }
+    }
   }
 }
